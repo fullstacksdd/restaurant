@@ -31,10 +31,10 @@ class Menu extends Component {
     }
 
     render() {
-        const menu = this.props.dishes.map((dish) => {
+        const menu = this.props.dishes.map((dish, index) => {
             return (
                 <div className="col-12 col-md-5 m-1">
-                <Card key={dish.id} 
+                <Card key={index} 
                      onClick={() => this.onDishSelect(dish)}>
                         <CardImg width="100%" src={dish.image} alt={dish.name} />
                         <CardImgOverlay>
@@ -59,5 +59,7 @@ class Menu extends Component {
         );
     }    
 }
+
+
 
 export default Menu;
