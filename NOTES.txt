@@ -1,0 +1,272 @@
+echo $0 outputs /bin/zsh
+echo $SHELL outputs /bin/zsh
+echo $PATH outputs /usr/bin:/bin:/usr/sbin:/sbin
+
+change to zsh shell
+-------------------
+chsh -s /bin/zsh
+zsh
+
+permissions issues brew:
+----------------------------
+$ sudo chown -R $(whoami) $(brew --prefix)/*
+-- Used commands are as follows:
+-- mkdir - make directories [-p no error if existing, make parent directories as needed]
+-- chown - change file owner and group [-R operate on files and directories recursively]
+-- whoami - print effective userid
+$ brew clean up
+$ brew install npm
+$ brew install nvm
+
+You should create NVM's working directory if it doesn't exist:
+
+  mkdir ~/.nvm
+
+Add the following to ~/.profile or your desired shell
+configuration file:
+
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
+You can set $NVM_DIR to any location, but leaving it unchanged from
+/usr/local/opt/nvm will destroy any nvm-installed Node installations
+upon upgrade/reinstall.
+
+Type `nvm help` for further information.
+
+Bash completion has been installed to:
+  /usr/local/etc/bash_completion.d
+==> Summary
+🍺  /usr/local/Cellar/nvm/0.35.3: 7 files, 149.9KB, built in 3 seconds
+HS001MAC72249% echo $0 outputs /bin/zsh
+
+zsh outputs /bin/zsh
+HS001MAC72249% echo $SHELL outputs /bin/zsh
+/bin/bash outputs /bin/zsh
+
+
+Add this to .zshrc file. 
+
+# For brew, at least
+export PATH=/usr/local/bin:$PATH
+
+# NVM Stuff
+export NVM_DIR="$HOME/.nvm"
+. "$(brew --prefix nvm)/nvm.sh"
+
+Restart terminal
+$ nvm install 10.13.0
+$ nvm install 12.14.0
+or whatever ...
+$ nvm list
+       v10.13.0
+->     v12.14.0
+         system
+default -> 10.13.0 (-> v10.13.0)
+node -> stable (-> v12.14.0) (default)
+stable -> 12.14 (-> v12.14.0) (default)
+iojs -> N/A (default)
+unstable -> N/A (default)
+lts/* -> lts/erbium (-> N/A)
+lts/argon -> v4.9.1 (-> N/A)
+lts/boron -> v6.17.1 (-> N/A)
+lts/carbon -> v8.17.0 (-> N/A)
+lts/dubnium -> v10.20.1 (-> N/A)
+lts/erbium -> v12.16.3 (-> N/A)
+
+Test node see app.js 
+% node app.js
+Server running at http://${hostname}:${port}/
+Open browser should see: Hello from NodeJS
+
+**** GOOD TO GO ...
+
+
+GITHUB first time setup:
+-----------------------
+
+HS001MAC72249:~ mike$ git config --global user.name "fullstacksdd"
+HS001MAC72249:~ mike$ git config --global user.email "fullstacksdd@gmail.com"
+
+ 
+
+HS001MAC72249:~ mike$ git config --global --list
+user.name=fullstacksdd
+user.email=fullstacksdd@gmail.com
+HS001MAC72249:~ mike$ ls -al ~/.ssh
+total 8
+drwx------   3 mike  staff    96 21 May  2017 .
+drwxr-xr-x+ 63 mike  staff  2016 16 May 22:48 ..
+-rw-r--r--   1 mike  staff   803 21 May  2017 known_hosts
+
+HS001MAC72249:~ mike$ ssh-keygen -t rsa -b 4096 -C "fullstacksdd@gmail.com"
+Generating public/private rsa key pair.
+Enter file in which to save the key (/Users/mike/.ssh/id_rsa): /Users/mike/.ssh/id_rsa
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /Users/mike/.ssh/id_rsa.
+Your public key has been saved in /Users/mike/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:AoBT8qs/4qDLfV6os+97lXMMTne4M6aP3cM2o9vWnLs fullstacksdd@gmail.com
+The key's randomart image is:
++---[RSA 4096]----+
+|.oo              |
+|oo .             |
+| .. .       .    |
+|   . .   o o .   |
+|  .   . S = o    |
+| .    .. = B     |
+|o    . .. = + o .|
+|=.o..... .o oB + |
+|+=.=B=o  ..==o+Eo|
++----[SHA256]-----+
+
+HS001MAC72249:~ mike$ cat /Users/mike/.ssh/id_rsa.pub
+
+NOW goto GitHub.com, settings, sshkeys and copy/paste the contents
+
+HS001MAC72249:~ mike$ ssh -T git@github.com
+Warning: Permanently added the RSA host key for IP address '140.82.118.4' to the list of known hosts.
+Hi fullstacksdd! You've successfully authenticated, but GitHub does not provide shell access.
+
+HS001MAC72249:~ mike$ 
+
+
+https://git-scm.com/doc - for everything GIT
+
+git config --list
+
+git init
+ 528  cd Documents/coursera/
+  529  git --version
+  530  git config --list
+  531  cd git-test/
+  532  git init
+  533  git status
+  534  git add .
+  535  git status
+  536  git commit -m "First commit"
+  537  git status
+  538  git log --oneline
+
+HS001MAC72249:git-test mike$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   index.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        templates/
+
+no changes added to commit (use "git add" and/or "git commit -a")
+HS001MAC72249:git-test mike$ git add .
+HS001MAC72249:git-test mike$ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        modified:   index.html
+        new file:   templates/test.html
+
+HS001MAC72249:git-test mike$ git commit -m "Second commit"
+[master d61f99a] Second commit
+ 2 files changed, 12 insertions(+)
+ create mode 100644 templates/test.html
+HS001MAC72249:git-test mike$ git log --oneline
+d61f99a Second commit
+91fda9f First commit
+HS001MAC72249:git-test mike$ git log
+commit d61f99a51dbb67fd2ccebb2b91df45a941c10ca7
+Author: fullstacksdd <fullstacksdd@gmail.com>
+Date:   Sat May 16 23:46:12 2020 +0100
+
+    Second commit
+
+commit 91fda9f9e18df1dbf1bd67c7319ac1b769904f0f
+Author: fullstacksdd <fullstacksdd@gmail.com>
+Date:   Sat May 16 23:41:10 2020 +0100
+
+    First commit
+
+HS001MAC72249:git-test mike$ 
+
+HS001MAC72249:git-test mike$ git status
+On branch master
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        modified:   index.html
+
+HS001MAC72249:git-test mike$ git commit -m "third commit"
+[master b571f13] third commit
+ 1 file changed, 1 insertion(+)
+HS001MAC72249:git-test mike$ git log --oneline
+b571f13 third commit
+d61f99a Second commit
+91fda9f First commit
+HS001MAC72249:git-test mike$ git checkout d61f99a index.html
+HS001MAC72249:git-test mike$ 
+HS001MAC72249:git-test mike$ 
+
+This reverts to "second commit" and the changes are rolled back in index.html
+
+HS001MAC72249:git-test mike$ git reset HEAD index.html
+Unstaged changes after reset:
+M       index.html
+HS001MAC72249:git-test mike$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+HS001MAC72249:git-test mike$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        modified:   index.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+HS001MAC72249:git-test mike$ git checkout -- index.html
+HS001MAC72249:git-test mike$ git status
+On branch master
+nothing to commit, working directory clean
+HS001MAC72249:git-test mike$ git log --oneline
+b571f13 third commit
+d61f99a Second commit
+91fda9f First commit
+HS001MAC72249:git-test mike$ 
+
+BitBucket
+---------
+-- create repository at BitBucket
+git remote add origin https://mikeneale@bitbucket/git-test.git
+git push -u origin master
+-- sets up the branch to track remote branch master from origin
+-- check status in BitBucket - master branch created
+-- the commits i.e. history will be available for review
+-- mirrored at the local repositry can only have one repository
+
+
+
+
+const options = { month: "long", day: "numeric", year: "numeric" };
+new Intl.DateTimeFormat("en-US", options).format();
+
+
+
+
+
+
+
+
