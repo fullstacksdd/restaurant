@@ -4,10 +4,19 @@ import { Card, CardImg, CardImgOverlay, CardTitle, CardText, CardBody } from 're
 class DishDetail extends Component {
 
     constructor (props) {
+        console.log("DishDetailComponent Component: constructor invoked");
         super(props);
         this.state= {
            selectedDish: this.props.dish
         };
+    }
+
+    componentDidMount() {
+        console.log("DishDetailComponent Component: componentDidMount invoked");
+    }
+
+    componentDidUpdate() {
+        console.log("DishDetailComponent Component: componentDidUpdate invoked");
     }
     
     renderComments() {
@@ -17,11 +26,11 @@ class DishDetail extends Component {
     }
 
     render() {
+        console.log("DishDetailComponent Component: render() Invoked");
         const dishItem = this.props.dish;
-        console.log("dishItem= ", dishItem);
         if (dishItem != null) {
             return (
-                <div class="container">
+                <div className="container">
                     <div className="row">
                         <div className="col-12 col-md-5 col-xs-12 col-sm-12 m-1">
                             <Card>
@@ -40,10 +49,10 @@ class DishDetail extends Component {
                                 {this.renderComments().map(item => {
                                     return (
                                         <ul className="list-unstyled">
-                                            <p> { item.comment } </p>
-                                            <p> -- { item.author }, 
+                                            <li> { item.comment } </li>
+                                            <li> -- { item.author }, 
                                                 { Intl.DateTimeFormat('en-US', 
-                                                {year: 'numeric', month: 'short', day: '2-digit'}).format(new Date(Date.parse(item.date)))} </p>    
+                                                {year: 'numeric', month: 'short', day: '2-digit'}).format(new Date(Date.parse(item.date)))} </li>    
                                         </ul>
                                     )
                                 })}           

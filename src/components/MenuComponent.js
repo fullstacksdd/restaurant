@@ -4,23 +4,10 @@ import { Card, CardImg, CardImgOverlay, CardTitle  } from 'reactstrap';
 
 class Menu extends Component {
 
-    // constructor (props) {
-    //     super(props);
-        
-    // }
- 
-   
-
-    // renderDish(dish) {
-    //     if (dish != null) 
-    //         return (
-    //             <DishDetail dish={this.state.selectedDish}/>
-    //         );
-    //     else 
-    //         return (
-    //             <div></div>
-    //         );
-    // }
+    constructor (props) {
+        console.log("MenuComponent Component: constructor invoked");
+        super(props);
+    }
 
     render() {
         const menu = this.props.dishes.map((dish) => {
