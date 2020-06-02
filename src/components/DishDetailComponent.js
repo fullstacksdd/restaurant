@@ -12,24 +12,16 @@ class DishDetail extends Component {
     
     renderComments() {
         return ( 
-            this.state.selectedDish.comments
+            this.props.dish.comments
         )
-    }
-
-    formatDate(itemDate) {
-        var today = new Date(itemDate);
-        var dd = today.getDate();
-        var mm = today.getMonth();
-        var yyyy = today.getFullYear();
-        var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-        return months[mm] + ' ' + dd + ', ' + yyyy;
     }
 
     render() {
         const dishItem = this.props.dish;
+        console.log("dishItem= ", dishItem);
         if (dishItem != null) {
             return (
-                <div>
+                <div class="container">
                     <div className="row">
                         <div className="col-12 col-md-5 col-xs-12 col-sm-12 m-1">
                             <Card>
@@ -48,9 +40,10 @@ class DishDetail extends Component {
                                 {this.renderComments().map(item => {
                                     return (
                                         <ul className="list-unstyled">
-                                            <li> { item.comment } </li>
-                                            <br />
-                                            <li> -- { item.author }, { this.formatDate(item.date) } </li>    
+                                            <p> { item.comment } </p>
+                                            <p> -- { item.author }, 
+                                                { Intl.DateTimeFormat('en-US', 
+                                                {year: 'numeric', month: 'short', day: '2-digit'}).format(new Date(Date.parse(item.date)))} </p>    
                                         </ul>
                                     )
                                 })}           

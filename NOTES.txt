@@ -1,3 +1,9 @@
+
+Front End Web Development with React - Hong Kong University:
+
+WEEK 1 - START
+--------------
+
 echo $0 outputs /bin/zsh
 echo $SHELL outputs /bin/zsh
 echo $PATH outputs /usr/bin:/bin:/usr/sbin:/sbin
@@ -262,6 +268,18 @@ git push -u origin master
 
 const options = { month: "long", day: "numeric", year: "numeric" };
 new Intl.DateTimeFormat("en-US", options).format();
+
+
+WEEK 2 - START
+--------------
+
+Container Components:
+
+1. Responsible for data-fetching, state updates.
+2. Make use of presentational components for rendering e.g. wrapping.
+3. Provide data to presentational components in props.
+4. Maintain state and communicate with data sources.
+
 
 
 
