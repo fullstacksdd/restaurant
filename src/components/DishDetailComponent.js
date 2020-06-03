@@ -3,8 +3,6 @@ import { Card, CardImg, CardImgOverlay, CardTitle, CardText, CardBody } from 're
 
     function RenderDish({dish}) {
         return(
-            <div className="row">
-                <div className="col-12 col-md-5 col-xs-12 col-sm-12 m-1">
                 <Card>
                     <CardImg src={dish.image} alt={dish.name} />
                     <CardBody>
@@ -14,17 +12,15 @@ import { Card, CardImg, CardImgOverlay, CardTitle, CardText, CardBody } from 're
                         <CardText>{dish.description}</CardText> 
                     </CardBody>
                 </Card>
-                </div>
-            </div>
         );
     }
 
     
     function RenderComments({comments}) {
         return(
-            comments.map((item) => {
+            comments.map((item => {
                 return (
-                    <ul className="list-unstyled" >
+                    <ul className="list-unstyled">
                         <li> { item.comment } </li>
                         <li> -- { item.author }, 
                             { Intl.DateTimeFormat('en-US', 
@@ -33,19 +29,21 @@ import { Card, CardImg, CardImgOverlay, CardTitle, CardText, CardBody } from 're
                     </ul>
                 )
             })   
-        );
+        ));
     }
 
     const DishDetail = (props) => {
         if (props.dish != null) {
             return (
-                <div>
-                    <div className="container">
-                        <RenderDish dish={props.dish}/>
-                    </div>
-                    <div className="col-12 col-md-5 col-xs-12 col-sm-12 ">
-                        <h4>Comments</h4>
-                        <RenderComments comments={props.dish.comments}/>      
+                <div class="container">
+                    <div className="row">
+                        <div key={props.dish.id} className="col-12 col-md-5 col-xs-12 col-sm-12 m-1">
+                            <RenderDish dish={props.dish}/>
+                        </div>
+                        <div className="col-12 col-md-5 col-xs-12 col-sm-12 ">
+                            <h4>Comments</h4>
+                            <RenderComments comments={props.dish.comments}/> 
+                        </div>
                     </div>
                 </div>
             )
