@@ -1,14 +1,14 @@
 import React from 'react';
 import { Card, CardImg, CardTitle, CardText, CardBody } from 'reactstrap';
-        
+    
 function RenderLeader({leaders}) {
     return(
         leaders.map((item, index) => {
             return (
                 <ul className="list-unstyled" key={index}>
                     <Card>
-                        <div className="card-horizontal">
-                            <CardImg className="image" src={item.image} />
+                        <div style={{display: 'flex', flex: '1 1 auto'}}>
+                            <CardImg style={{height: '100px',width: '25%'}}  src={item.image} />
                             <CardBody className="bg-faded">
                                 <CardTitle>{item.name}</CardTitle>
                                 <CardText>{item.designation}</CardText>
