@@ -1,15 +1,9 @@
 import React from 'react';
 import { Breadcrumb, BreadcrumbItem, Card, CardBody, CardHeader, Media } from 'reactstrap';
 import { Link } from 'react-router-dom';
+import LeaderDetail from './RenderLeaderComponent';
 
 function About(props) {
-
-    // const leaders = props.leaders.map((leader) => {
-    //     return (
-    //         <p>Leader {leader.name}</p>
-    //     );
-    // });
-
     return(
         <div className="container">
             <div className="row">
@@ -60,15 +54,13 @@ function About(props) {
                     </Card>
                 </div>
             </div>
-            <div className="row row-content">
+            <div>
                 <div className="col-12">
-                    <h2>Corporate Leadership</h2>
-                </div>
-                {/* <div className="col-12">
+                    <h3>Corporate Leadership</h3>
                     <Media list>
-                        {leaders}
+                        <LeaderDetail leaders={props.leaders} />
                     </Media>
-                </div> */}
+                </div>
             </div>
         </div>
     );

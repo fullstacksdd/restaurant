@@ -31,3 +31,13 @@ address{
 .navbar-dark {
     background-color: #512DA8;
 }
+
+.card-horizontal {
+    display: flex;
+    flex: 1 1 auto;
+}
+
+.image {
+    height: 100px;
+    width: 25%;
+}
