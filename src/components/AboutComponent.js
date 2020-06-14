@@ -55,12 +55,10 @@ function About(props) {
                 </div>
             </div>
             <div>
-                <div className="col-12">
-                    <h3>Corporate Leadership</h3>
-                    <Media list>
-                        <LeaderDetail leaders={props.leaders} />
-                    </Media>
-                </div>
+                <h3>Corporate Leadership</h3>
+                <Media list>
+                    <LeaderDetail leaders={props.leaders} />
+                </Media>
             </div>
         </div>
     );

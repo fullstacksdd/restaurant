@@ -27,7 +27,7 @@ const LeaderDetail = (props) => {
         return (
             <div className="container">
                 <div className="row">
-                    <div class="col-12 mt-3">
+                    <div className="col-12">
                         <RenderLeader leaders={props.leaders}/>      
                     </div>
                 </div>
