@@ -289,6 +289,22 @@ git log --oneline
 
 WEEK 3 - START 19/08/20
 -----------------------
+ContactComponent.js - include validation for the following fields:
+  firstname,
+  lastname,
+  telnum,
+  email
+
+Reading ...
+
+https://reactjs.org/docs/forms.html
+https://reactstrap.github.io/components/form/
+https://www.viget.com/articles/controlling-components-react/
+https://medium.com/@peter.yun.kim/controlled-and-uncontrolled-input-values-in-react-907119cc98d4
+https://goshakkk.name/controlled-vs-uncontrolled-inputs-react/
+https://medium.com/capital-one-tech/how-to-work-with-forms-inputs-and-events-in-react-c337171b923b
+https://medium.com/javascript-inside/some-thoughts-on-forms-in-react-9ca2d9078c20
+https://goshakkk.name/instant-form-fields-validation-react/
 
 
 
