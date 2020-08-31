@@ -307,7 +307,9 @@ https://medium.com/javascript-inside/some-thoughts-on-forms-in-react-9ca2d9078c2
 https://goshakkk.name/instant-form-fields-validation-react/
 
 
-
+HeaderComponent.js - uncontrolled forms use of innerRef with modals to access properties.
+Read Controlled-Components-Forms.pdf in folder /mynotes.
+Videos in /mynotes.
 
 
 
