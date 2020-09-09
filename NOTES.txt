@@ -327,6 +327,17 @@ https://medium.com/capital-one-developers/how-to-work-with-forms-inputs-and-even
 https://medium.com/javascript-inside/some-thoughts-on-forms-in-react-9ca2d9078c20
 
 
+Intro to Redux
+--------------
+
+https://redux.js.org/
+https://github.com/reactjs/redux
+https://redux.js.org/basics/usage-with-react
+https://redux.js.org/basics/basic-tutorial
+The Flux Architecture
+
+https://github.com/markerikson/react-redux-links/blob/master/redux-tutorials.md
+https://facebook.github.io/flux/docs/in-depth-overview.html#content
 
 
 
