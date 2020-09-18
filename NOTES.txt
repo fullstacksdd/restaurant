@@ -341,5 +341,11 @@ https://facebook.github.io/flux/docs/in-depth-overview.html#content
 
 
 
+React Redux Form: Additional Resources
+--------------------------------------
 
 
+https://davidkpiano.github.io/react-redux-form/docs.html
+https://medium.com/@steida/the-boring-react-redux-forms-a15ee8a6b52b
+https://swizec.com/blog/populate-react-redux-form-dynamic-default-values/swizec/8158
+https://goshakkk.name/should-i-put-form-state-into-redux/
