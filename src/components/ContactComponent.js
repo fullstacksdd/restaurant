@@ -55,7 +55,7 @@ class Contact extends Component {
                     <div className="col-12 col-sm-11 offset-sm-1">
                         <div className="btn-group" role="group">
                             <a role="button" className="btn btn-primary" href="tel:+85212345678"><i className="fa fa-phone"></i> Call</a>
-                            <a role="button" className="btn btn-info"><i className="fa fa-skype"></i> Skype</a>
+                            <a role="button" className="btn btn-info" href="tel:+85212345678"><i className="fa fa-skype"></i> Skype</a>
                             <a role="button" className="btn btn-success" href="mailto:confusion@food.net"><i className="fa fa-envelope-o"></i> Email</a>
                         </div>
                     </div>
@@ -63,7 +63,6 @@ class Contact extends Component {
                 <div className="row row-content">
                     <div className="col-12">
                         <h3>Send us Your feedback</h3>
-
                     </div>
                     <div className="col-12 col-md-9">
                         <LocalForm onSubmit={(values) => this.handleSubmit(values)}>
@@ -152,7 +151,7 @@ class Contact extends Component {
                                     show="touched"
                                     messages={{
                                         required: "Required",
-                                        validEmail: " Invalid Email Address"
+                                        validEmail: "Invalid Email Address"
                                     }}
                                 />
 
@@ -170,7 +169,7 @@ class Contact extends Component {
                                     </div>
                                 </Col>
                                 <Col md={{size: 3, offset: 1}}>
-                                        <Control.select model=".contactType" name="contactType" 
+                                        <Control.select model=".contactType" id="contactType" name="contactType" 
                                             className="form-control">
                                             <option>Tel.</option>
                                             <option>Email</option>
