@@ -349,3 +349,9 @@ https://davidkpiano.github.io/react-redux-form/docs.html
 https://medium.com/@steida/the-boring-react-redux-forms-a15ee8a6b52b
 https://swizec.com/blog/populate-react-redux-form-dynamic-default-values/swizec/8158
 https://goshakkk.name/should-i-put-form-state-into-redux/
+
+Assignment 3: Additional Resources
+----------------------------------
+
+Reactstrap Model Component - https://reactstrap.github.io/components/modals/ 
+React Reux Form Documentation - https://davidkpiano.github.io/react-redux-form/docs.html
