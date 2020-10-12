@@ -24,9 +24,6 @@ function RenderLeader({leaders}){
 }
 
 function About(props) {
-
-  
-
     return(
         <div className="container">
             <div className="row">
