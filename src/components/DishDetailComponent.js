@@ -3,7 +3,6 @@ import { Card, CardImg, CardImgOverlay, CardTitle, CardText, CardBody, Breadcrum
 import { Link } from 'react-router-dom';
 import { Control, LocalForm, Errors } from 'react-redux-form';
 import { Button, Label, Col, Row, Modal, ModalBody } from 'reactstrap';
-import { addComment } from '../redux/ActionCreators';
 
 
 const required = (val) => val && val.length;
@@ -24,26 +23,37 @@ function RenderDish({dish}) {
     );
 }
 
-function RenderComments({comments}) {
-    return(
-        comments.map((item) => {
-            return (
-                <ul className="list-unstyled" key={item.id}>
-                    <li> { item.comment } </li>
-                    <li> -- { item.author }, 
-                        { Intl.DateTimeFormat('en-US', 
-                        {year: 'numeric', month: 'short', 
-                        day: '2-digit'}).format(new Date(Date.parse(item.date)))} </li>    
+function RenderComments({comments, addComment, dishId}) {
+    if (comments != null)
+        return(
+            <div className="col-12 col-md-10 m-1">
+                <ul className="list-unstyled">
+                    {comments.map((comment) => {
+                        return (
+                            <li key={comment.id}>
+                            <p>{comment.comment}</p>
+                            <p> -- { comment.author }, 
+                                    { Intl.DateTimeFormat('en-US', 
+                                    {year: 'numeric', month: 'short', 
+                                    day: '2-digit'}).format(new Date(Date.parse(comment.date)))} 
+                            </p> 
+                            </li>
+                        );
+                    })}
                 </ul>
-            )
-        }) 
-          
-    );
-}
+                <CommentForm dishId={dishId} addComment={addComment} />
+            </div>
+        );
+    else
+        return(
+            <div>;</div>
+
+        );
+    }
 
 function CommentModal(dishId) {
     const [modalOpen, setModalOpen] = React.useState(false);
-    alert("Opening CommentModal: " + JSON.stringify(dishId));
+    // alert("Opening CommentModal: " + JSON.stringify(dishId));
     return (
       <div>
         <Button type="button" onClick={() => setModalOpen(!modalOpen)}>
@@ -61,7 +71,7 @@ function CommentModal(dishId) {
               <span aria-hidden={true}>×</span>
             </button>
           </div>
-          <ModalBody><CommentForm dishId={dishId}/></ModalBody>
+          <ModalBody></ModalBody>
         </Modal>
       </div>
     );
@@ -120,7 +130,7 @@ class DishDetail extends Component {
     }
 
     handleSubmit(event) {
-        alert("$$$$ DishDetail handle submit getState() " + JSON.stringify(this.state));
+        // alert("$$$$ DishDetail handle submit getState() " + JSON.stringify(this.state));
     }
 
     render () {
@@ -128,7 +138,7 @@ class DishDetail extends Component {
             // alert("££££££££ DishDetail render() toggleModal() " + JSON.stringify(this.state));
             this.setShowModal(this.showModal)
         }
-        alert("$$$$ DishDetail render getState() " + JSON.stringify(this.state));
+        // alert("$$$$ DishDetail render getState() " + JSON.stringify(this.state));
         return (
             <div className="container">
                 <div className="row">
@@ -200,9 +210,9 @@ class CommentForm extends Component {
     }
 
     handleSubmit(values) {
-        alert("Adding comment for dishId: " + JSON.stringify(this.state.dishId));
-        alert("Adding comments: " + JSON.stringify(values));
-        addComment(this.state.dishId, values.rating, values.author, values.comment )
+        // alert("Adding comment for dishId: " + JSON.stringify(this.state.dishId));
+        // alert("Adding comments: " + JSON.stringify(values));
+        this.props.addComment(this.props.dishId, values.rating, values.author, values.comment);
         alert("Success: New Comment Added");
     }
 

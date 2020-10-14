@@ -15,7 +15,7 @@ const mapStateToProps = state => {
     dishes: state.dishes,
     comments: state.comments,
     promotions: state.promotions,
-    leaders: state.leaders
+    leaders: state.leaders,
   }
 }
 
@@ -26,6 +26,7 @@ const mapDispatchToProps = (dispatch) => ({
 class Main extends Component {
       constructor(props) {
         super(props);
+
       }
  
   render(){
