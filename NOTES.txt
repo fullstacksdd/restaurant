@@ -355,3 +355,18 @@ Assignment 3: Additional Resources
 
 Reactstrap Model Component - https://reactstrap.github.io/components/modals/ 
 React Reux Form Documentation - https://davidkpiano.github.io/react-redux-form/docs.html
+
+
+
+
+Week 4
+------
+
+Create a JSON server
+
+
+Fetch from JSON Server:
+
+cd json-server
+json-server --watch db.json -d 2000 -p 3001
+
