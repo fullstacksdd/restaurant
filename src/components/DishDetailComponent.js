@@ -24,7 +24,7 @@ function RenderDish({dish}) {
     );
 }
 
-function RenderComments({comments, addComment, dishId}) {
+function RenderComments({comments, postComment, dishId}) {
     const [modalOpen, setModalOpen] = React.useState(false);
     if (comments != null)
         return(
@@ -60,7 +60,7 @@ function RenderComments({comments, addComment, dishId}) {
                         </button>
                         </div>
                         <ModalBody>
-                        <CommentForm dishId={dishId} addComment={addComment} />
+                        <CommentForm dishId={dishId} postComment={postComment} />
                         </ModalBody>
                     </Modal>
                 </div>
@@ -116,7 +116,7 @@ class DishDetail extends Component {
                         <div className="col-12 col-md-5 col-xs-12 col-sm-12">
                             <h4>Comments</h4>                            
                             <RenderComments comments={this.props.comments} 
-                                addComment={this.props.addComment} 
+                                postComment={this.props.postComment} 
                                 dishId={this.props.dish.id} /> 
                         </div>
                     </div>
@@ -145,7 +145,7 @@ class CommentForm extends Component {
 
     handleSubmit(values) {
         this.toggleModal();
-        this.props.addComment(this.props.dishId, values.rating, values.author, values.comment);
+        this.props.postComment(this.props.dishId, values.rating, values.author, values.comment);
     }
 
     render () {
