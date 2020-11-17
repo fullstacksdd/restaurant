@@ -209,6 +209,54 @@
       "comment": "A lovely dish",
       "date": "2020-11-11T00:01:43.462Z",
       "id": 20
+    },
+    {
+      "dishId": 1,
+      "rating": "3",
+      "author": "Franz Ferdinand",
+      "comment": "Excellent food!",
+      "date": "2020-11-12T11:40:16.381Z",
+      "id": 21
+    },
+    {
+      "dishId": 0,
+      "rating": "2",
+      "author": "Julie Felix",
+      "comment": "I love a good pizza guaranteed here!",
+      "date": "2020-11-12T11:41:28.131Z",
+      "id": 22
+    },
+    {
+      "dishId": 2,
+      "rating": "2",
+      "author": "Paul McCartney",
+      "comment": "Lets boogie on down ...",
+      "date": "2020-11-17T12:31:28.990Z",
+      "id": 23
+    },
+    {
+      "dishId": 0,
+      "rating": "2",
+      "author": "George Harrison",
+      "comment": "Fab, cool, far out ...",
+      "date": "2020-11-17T12:32:03.189Z",
+      "id": 24
+    },
+    {
+      "dishId": 1,
+      "rating": "5",
+      "author": "John Lennon",
+      "comment": "Hey Paul, George, and Ringo you know I love the food here, lets rock'n roll!",
+      "date": "2020-11-17T12:32:55.479Z",
+      "id": 25
+    },
+    {
+      "dishId": 3,
+      "rating": "4",
+      "author": "Yoko Ono",
+      "comment": "I luv this cheesecake it velly nice!",
+      "date": "2020-11-17T12:33:43.346Z",
+      "id": 26
     }
   ],
   "promotions": [
