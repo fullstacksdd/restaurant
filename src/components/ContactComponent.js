@@ -9,7 +9,6 @@ const minLength = (len) => (val) => (val) && (val.length >= len);
 const isNumber = (val) => !isNaN(Number(val));
 const validEmail = (val) => /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(val);
 
-
 class Contact extends Component {
     constructor(props) {
         super(props); 
@@ -19,6 +18,7 @@ class Contact extends Component {
     handleSubmit(values) {
         console.log("Current state is " + JSON.stringify(values));
         alert("Current state is " + JSON.stringify(values));
+        this.props.postFeedback(values.firstname, values.lastname, values.telnum, values.email, values.agree, values.contactType, values.message);
         this.props.resetFeedbackForm();
     }
 
@@ -188,7 +188,7 @@ class Contact extends Component {
                             <Row className="form-group">
                                 <Col md={{size:10, offset: 2}}>
                                     <Button type="submit" color="primary" >
-                                        Send Feedback
+                                        Submit Feedback
                                     </Button>
                                 </Col>
                             </Row>
