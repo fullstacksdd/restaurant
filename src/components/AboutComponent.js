@@ -28,7 +28,6 @@ const RenderLeader  = (props) => {
     });
 
     if(props.leaders.isLoading) {
-        console.log('AboutComponent: isLoading ....')
         return(
             <div className="container">
                 <div className="row">
@@ -38,7 +37,6 @@ const RenderLeader  = (props) => {
         );
     } 
     else if (props.leaders.errMess) {
-        console.log('AboutComponent: errMess ....')
         return(
             <div className="container">
                 <div className="row">
@@ -48,7 +46,6 @@ const RenderLeader  = (props) => {
         );
     }
     else {
-        console.log('AboutComponent: return leaders')
         return (
             <div className="container">
                 <div className="row">
